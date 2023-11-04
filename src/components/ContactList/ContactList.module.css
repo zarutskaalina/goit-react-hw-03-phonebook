@@ -1,0 +1,18 @@
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button {
+  margin-left: 5px;
+  border-radius: 4px;
+  background-color: black;
+  color: aliceblue;
+}
+
+.button:hover,
+.button:focus {
+  background-color: aliceblue;
+  color: black;
+}
