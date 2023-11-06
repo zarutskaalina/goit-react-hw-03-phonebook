@@ -16,6 +16,25 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const stringifiedData = localStorage.getItem('contacts');
+    if (stringifiedData) {
+      const parsedContact = JSON.parse(stringifiedData);
+      this.setState({
+        contacts: parsedContact,
+      });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+    // prevState - попередній.початковий стан
+    if (prevState.contacts !== contacts) {
+      const stringifiedContact = JSON.stringify(contacts);
+      localStorage.setItem('contacts', stringifiedContact);
+    }
+  }
+
   handleAddName = contactsData => {
     const { name, number } = contactsData;
     const { contacts } = this.state;
