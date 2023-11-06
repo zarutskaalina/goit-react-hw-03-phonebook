@@ -18,12 +18,11 @@ export class App extends Component {
 
   componentDidMount() {
     const stringifiedData = localStorage.getItem('contacts');
-    if (stringifiedData) {
-      const parsedContact = JSON.parse(stringifiedData);
-      this.setState({
-        contacts: parsedContact,
-      });
-    }
+    const parsedContact = JSON.parse(stringifiedData);
+
+    this.setState({
+      contacts: parsedContact,
+    });
   }
 
   componentDidUpdate(_, prevState) {
@@ -74,7 +73,10 @@ export class App extends Component {
     return (
       <div>
         <Section title="Phonebook">
-          <ContactsForm handleAddName={this.handleAddName} />
+          <ContactsForm
+            handleAddName={this.handleAddName}
+            // handleClearInput={this.handleClearInput}
+          />
         </Section>
         <Section title="Contacts">
           <SearchFile

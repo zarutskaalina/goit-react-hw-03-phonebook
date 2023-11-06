@@ -27,6 +27,10 @@ export class ContactsForm extends Component {
     };
 
     this.props.handleAddName(contactsData);
+    this.setState({
+      name: '',
+      number: '',
+    });
   };
 
   render() {
