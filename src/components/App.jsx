@@ -38,6 +38,11 @@ export class App extends Component {
     const { name, number } = contactsData;
     const { contacts } = this.state;
 
+    if (!contacts) {
+      console.error('Contacts array is null or undefined.');
+      return;
+    }
+
     const existingContact = contacts.some(contact => contact.name === name);
 
     if (existingContact) {
@@ -62,7 +67,7 @@ export class App extends Component {
       ? contacts.filter(contact =>
           contact.name.toLowerCase().startsWith(normalizedFilter)
         )
-      : [];
+      : contacts;
 
     return filteredContacts;
   };
