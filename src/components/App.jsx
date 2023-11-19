@@ -57,9 +57,14 @@ export class App extends Component {
   getFindContact = () => {
     const { filter, contacts } = this.state;
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().startsWith(normalizedFilter)
-    );
+
+    const filteredContacts = contacts
+      ? contacts.filter(contact =>
+          contact.name.toLowerCase().startsWith(normalizedFilter)
+        )
+      : [];
+
+    return filteredContacts;
   };
 
   handleDeleteContact = contactId => {
@@ -75,6 +80,7 @@ export class App extends Component {
         <Section title="Phonebook">
           <ContactsForm handleAddName={this.handleAddName} />
         </Section>
+
         <Section title="Contacts">
           <SearchFile
             onChange={this.handleFilterInput}
