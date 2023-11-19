@@ -73,10 +73,7 @@ export class App extends Component {
     return (
       <div>
         <Section title="Phonebook">
-          <ContactsForm
-            handleAddName={this.handleAddName}
-            // handleClearInput={this.handleClearInput}
-          />
+          <ContactsForm handleAddName={this.handleAddName} />
         </Section>
         <Section title="Contacts">
           <SearchFile
