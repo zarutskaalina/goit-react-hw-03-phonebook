@@ -20,9 +20,9 @@ export class App extends Component {
     const stringifiedData = localStorage.getItem('contacts');
     const parsedContact = JSON.parse(stringifiedData);
 
-    if (stringifiedData === null) {
+    if (!stringifiedData || stringifiedData === '[]') {
       this.setState({
-        contacts: stringifiedData,
+        contacts: this.state.contacts,
       });
     } else {
       this.setState({
