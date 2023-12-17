@@ -34,10 +34,10 @@ export class App extends Component {
   componentDidUpdate(_, prevState) {
     const { contacts } = this.state;
     // prevState - попередній.початковий стан
-    if (prevState.contacts !== contacts) {
-      const stringifiedContact = JSON.stringify(contacts);
-      localStorage.setItem('contacts', stringifiedContact);
-    }
+    // if (prevState.contacts !== contacts) {
+    const stringifiedContact = JSON.stringify(contacts);
+    localStorage.setItem('contacts', stringifiedContact);
+    // }
   }
 
   handleAddName = contactsData => {
