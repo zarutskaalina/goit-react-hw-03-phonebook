@@ -20,9 +20,15 @@ export class App extends Component {
     const stringifiedData = localStorage.getItem('contacts');
     const parsedContact = JSON.parse(stringifiedData);
 
-    this.setState({
-      contacts: parsedContact,
-    });
+    if (stringifiedData === null) {
+      this.setState({
+        contacts: stringifiedData,
+      });
+    } else {
+      this.setState({
+        contacts: parsedContact,
+      });
+    }
   }
 
   componentDidUpdate(_, prevState) {
