@@ -17,16 +17,15 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    const stringifiedData = localStorage.getItem('contacts');
-    const parsedContact = JSON.parse(stringifiedData);
+    const parsedContacts = JSON.parse(localStorage.getItem('contacts'));
 
-    if (!stringifiedData || stringifiedData === '[]') {
+    if (!parsedContacts) {
       this.setState({
         contacts: this.state.contacts,
       });
     } else {
       this.setState({
-        contacts: parsedContact,
+        contacts: parsedContacts,
       });
     }
   }

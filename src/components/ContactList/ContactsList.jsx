@@ -8,6 +8,7 @@ export class ContactsList extends Component {
 
   render() {
     const { contacts } = this.props;
+    console.log(contacts);
 
     return (
       <ul className={style.contactList}>
