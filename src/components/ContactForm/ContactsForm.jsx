@@ -53,7 +53,7 @@ export class ContactsForm extends Component {
             name="number"
             value={this.state.number}
             onChange={this.handleInputChange}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
             required
           />
         </label>

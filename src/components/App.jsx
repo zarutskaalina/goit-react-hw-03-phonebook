@@ -70,7 +70,7 @@ export class App extends Component {
 
     const filteredContacts = contacts
       ? contacts.filter(contact =>
-          contact.name.toLowerCase().startsWith(normalizedFilter)
+          contact.name.toLowerCase().includes(normalizedFilter)
         )
       : contacts;
 
